@@ -4,6 +4,7 @@ func IsBalanced(s string) bool {
 	open := 0
 	wild := 0
 	l := len(s)
+	//t := 0
 	for i := 0; i < l; i++ {
 		char := s[i]
 		if char == '(' {
@@ -25,5 +26,5 @@ func IsBalanced(s string) bool {
 			wild++
 		}
 	}
-	return open-wild == 0 || l == wild
+	return open-wild <= 0 || l == wild || (open-wild)%2 == 0
 }

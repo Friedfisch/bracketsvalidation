@@ -16,14 +16,18 @@ func cB1(t *testing.T, n string, s string, e bool) {
 }
 
 func TestSolve(t *testing.T) {
+	cB1(t, "sf 5", "(***(()", false)
+
 	cB1(t, "sok 1", "(*", true)
 	cB1(t, "sok 2", "(*))", true)
 	cB1(t, "sok 3", "****", true)
+	cB1(t, "sok 4", "(***", true)
+	cB1(t, "sok 5", "((*)*()", true)
 	cB1(t, "sf 1", "((*", false)
 	cB1(t, "sf 2", ")*(", false)
-	cB1(t, "sf 3", "((*)*()", false)
-	cB1(t, "sf 4", "*(", false)
+	cB1(t, "sf 3", "*(", false)
 	cB1(t, "sf 4", "***(", false)
+	cB1(t, "sf 5", "(***(()", false)
 
 	cB1(t, "empty", "", true)
 	cB1(t, "no data", "123", true)
